@@ -5,10 +5,12 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 
 SQL Queries:
+select sum ("transactionRevenue"), country, city from allsessions
+group by country, city 
+order by sum ("transactionRevenue")
 
 
-
-Answer:
+Answer: Country is US and the city is sunnyvale
 
 
 
@@ -17,11 +19,13 @@ Answer:
 
 
 SQL Queries:
+select avg ("productQuantity"), country, city from allsessions
+group by country, city 
+order by avg ("productQuantity")
 
 
 
-Answer:
-
+Answer: the average number of products orderd is Mostly 1 for USA and its 10 for spain. 
 
 
 
@@ -30,10 +34,14 @@ Answer:
 
 
 SQL Queries:
+select allsessions."v2ProductCategory", 
+allsessions.city, allsessions.country, analytics.units_sold from allsessions 
+join analytics ON analytics."visitId" = allsessions."visitId"
+where analytics.units_sold >= 1
+order by city, country
 
 
-
-Answer:
+Answer: if not same, City and country have similar product catogeries orderd.  
 
 
 
