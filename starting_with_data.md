@@ -1,8 +1,13 @@
-Question 1: 
+Question 1: which mode of visitors ( ChannelGrouping ) generated more revenue 
 
 SQL Queries:
+select sum (revenue),"channelGrouping"  from analytics
+group by "channelGrouping"
+order by sum (revenue) desc
 
-Answer: 
+
+Answer: refferal, Direct & organic search created more revenue 
+
 
 
 
