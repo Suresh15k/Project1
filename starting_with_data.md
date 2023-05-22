@@ -11,11 +11,13 @@ Answer: refferal, Direct & organic search created more revenue
 
 
 
-Question 2: 
+Question 2: which type of transcations happend most 
 
 SQL Queries:
+select count ("totalTransactionRevenue"), type from allsessions
+group by type
 
-Answer:
+Answer: Most of the transcations happend through Page 
 
 
 
