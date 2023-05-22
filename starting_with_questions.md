@@ -63,10 +63,11 @@ Answer:
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
 
 SQL Queries:
+select city, country, "itemRevenue", "productRevenue", "transactionRevenue"  from allsessions
+order by  "transactionRevenue" desc
 
 
-
-Answer:
+Answer: most of the sales has happend in US country and perticularly sunnyvale city. 
 
 
 
