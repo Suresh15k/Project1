@@ -51,10 +51,26 @@ Answer: if not same, City and country have similar product catogeries orderd.
 
 
 SQL Queries:
+with CTE as (select allsessions.city, 
+ allsessions."productSKU", 
+ Sum (analytics."units_sold") as units_sold
+ from allsessions 
+inner join analytics on allsessions."visitId" = analytics."visitId" 
+group by allsessions.city, allsessions."productSKU"
+),
+max_product_country_CTE as (
+select city, max (units_sold) as max_units_sold
+from CTE 
+group by city)
+
+select * from CTE
+inner join max_product_country_CTE as mpce on mpce.city = CTE.city and 
+mpce.max_units_sold = CTE.units_sold
+where units_sold > 0
+order by CTE.city
 
 
-
-Answer:
+Answer: I was getting the details of maximum sold PRODUCTSKU in each city 
 
 
 
