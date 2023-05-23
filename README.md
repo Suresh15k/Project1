@@ -10,10 +10,11 @@ The goal is to understand the interaction between the customers and the ecommerc
 ### Find insigts from the clean data to understand the process 
 
 ## Results
-(fill in what you discovered this data could tell you and how you used the data to answer those questions)
+I was able to inderstand that the maximum sale happend through Page compared to events. I do understand that most of the orders happend in one country "US" and a very little in spain. 
 
 ## Challenges 
 The data had lots of duplicates value, Null values, Redundant Values, Type changes, Format change making it difficult to clean and evaluate 
 
 ## Future Goals
+I have to do much more cleaning of the data and try to create a relational database. 
 
