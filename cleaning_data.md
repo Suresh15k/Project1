@@ -5,7 +5,7 @@ By cleaning the data i can form a primary keys and start to make a relational da
 Queries:
 Below, provide the SQL queries you used to clean your data.
 
-# deleting duplicate visitor ID from allsessions to make it as an primary key 
+# deleting duplicate visitor ID from allsessions using Distinct function 
 select distinct "fullVisitorId", 
 "channelGrouping",
 time, 
@@ -27,6 +27,15 @@ date,
 "transactionRevenue", "transactionId", "pageTitle", "searchKeyword",
 "pagePathLevel1","eCommerceAction_type","eCommerceAction_step","eCommerceAction_option" 
 from allsessions AS als
+
+ Deleting duplicates using inner join 
+ 
+ select * from allsessions as als
+inner join analytics as anl on als."visitId" = anl."visitId"
+inner join products as pt on als."productSKU" = pt."SKU"
+inner join sales_report as sr on als."productSKU" = sr."productSKU"
+
+
 
 
 Replacing Null Values with Zero 
